@@ -1,243 +1,288 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 - 小白随记</title>
+    <title>Privacy Policy - Leukanote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0A84FF;
+            --text: #1C1C1E;
+            --text-secondary: #6E6E73;
+            --bg: #F5F5F7;
+            --card: #FFFFFF;
+            --border: #E5E5EA;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f7fa;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            opacity: 0.9;
-        }
-        
-        .content {
-            background: white;
-            border-radius: 16px;
-            padding: 40px 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .section p {
-            color: #555;
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-        
-        .section ul {
-            margin-left: 20px;
-            color: #555;
-        }
-        
-        .section li {
-            margin-bottom: 10px;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.7;
         }
         
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 4px;
+        }
+        
+        .lang-switch button {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        
+        .lang-switch button.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0A84FF 0%, #5856D6 100%);
+            border-radius: 24px;
+            padding: 48px 32px;
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            opacity: 0.85;
+            font-size: 16px;
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .card ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+        
+        .card li {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        
         .highlight {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 15px 20px;
+            background: linear-gradient(135deg, #E3F2FF 0%, #F0E6FF 100%);
+            border-radius: 16px;
+            padding: 24px;
             margin: 20px 0;
-            border-radius: 0 8px 8px 0;
         }
         
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
+        .highlight p {
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 500;
         }
         
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
+        .highlight p:last-child {
+            margin-bottom: 0;
         }
         
         .back-link {
             display: inline-flex;
             align-items: center;
-            color: #667eea;
+            color: var(--text-secondary);
             text-decoration: none;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            font-size: 15px;
             font-weight: 500;
         }
         
         .back-link:hover {
-            text-decoration: underline;
+            color: var(--primary);
         }
         
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        [data-lang="en"] .zh { display: none; }
+        [data-lang="zh"] .en { display: none; }
+        
         @media (max-width: 600px) {
-            .content {
-                padding: 25px 20px;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .header h1 {
-                font-size: 1.5em;
-            }
+            .header { padding: 32px 24px; }
+            .header h1 { font-size: 26px; }
+            .card { padding: 24px; }
         }
     </style>
 </head>
-<body>
+<body data-lang="zh">
+    <div class="lang-switch">
+        <button class="active" onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+    </div>
+    
     <div class="container">
-        <a href="index.html" class="back-link">← 返回支持主页</a>
+        <a href="index.html" class="back-link">← <span class="zh">返回</span><span class="en">Back</span></a>
         
         <div class="header">
-            <h1>隐私政策</h1>
-            <p>最后更新日期：2024年</p>
+            <h1>
+                <span class="zh">隐私政策</span>
+                <span class="en">Privacy Policy</span>
+            </h1>
+            <p>
+                <span class="zh">最后更新：2024年</span>
+                <span class="en">Last updated: 2024</span>
+            </p>
         </div>
         
-        <div class="content">
-            <div class="section">
+        <!-- 中文内容 -->
+        <div class="zh">
+            <div class="card">
                 <h2>1. 核心隐私声明</h2>
                 <div class="highlight">
-                    <strong>【小白随记】</strong>是一款纯本地及 iCloud 同步的健康管理工具。我们极其重视您的隐私安全。
+                    <p>【小白随记】是一款纯本地及 iCloud 同步的健康管理工具。我们极其重视您的隐私安全。</p>
+                    <p>您的所有健康数据（化验单、指标、笔记等）均存储在您的设备本地，或通过您私人的 Apple iCloud 进行加密同步。</p>
+                    <p>开发者（我们）无法获取、查看、收集或分析您的任何健康记录。</p>
                 </div>
-                <p>您的所有健康数据（化验单、指标、笔记等）均存储在您的设备本地，或通过您私人的 Apple iCloud 进行加密同步。</p>
-                <p><strong>开发者（我们）无法获取、查看、收集或分析您的任何健康记录。</strong></p>
             </div>
             
-            <div class="section">
+            <div class="card">
                 <h2>2. 信息收集与使用</h2>
-                
-                <h3 style="color: #444; margin: 20px 0 10px; font-size: 1.1em;">身份验证</h3>
-                <p>我们仅使用「通过 Apple 登录」(Sign in with Apple) 进行身份验证，获取您的匿名用户 ID 及可选的昵称，绝不会收集手机号等敏感信息。</p>
-                
-                <h3 style="color: #444; margin: 20px 0 10px; font-size: 1.1em;">本地 OCR 识别</h3>
-                <p>当您扫描化验单时，文字识别完全在您的 iPhone 本地运行（基于 Apple Vision 框架），<strong>图片绝不会上传到任何第三方服务器</strong>。</p>
-                
-                <h3 style="color: #444; margin: 20px 0 10px; font-size: 1.1em;">系统权限</h3>
-                <ul>
-                    <li><strong>相机及相册权限</strong>：仅用于本地文档扫描，图片不上传</li>
-                    <li><strong>通知权限</strong>：仅用于在您的设备上发送本地用药提醒</li>
-                </ul>
+                <p><strong>身份验证：</strong>我们仅使用「通过 Apple 登录」(Sign in with Apple) 进行身份验证，获取您的匿名用户 ID 及可选的昵称，绝不会收集手机号等敏感信息。</p>
+                <p><strong>本地 OCR 识别：</strong>当您扫描化验单时，文字识别完全在您的 iPhone 本地运行（基于 Apple Vision 框架），图片绝不会上传到任何第三方服务器。</p>
+                <p><strong>系统权限：</strong>相机及相册权限仅用于本地文档扫描；通知权限仅用于在您的设备上发送本地用药提醒。</p>
             </div>
             
-            <div class="section">
+            <div class="card">
                 <h2>3. 信息的存储与分享</h2>
-                <div class="highlight">
-                    <p>我们没有任何中央服务器来存储您的私人健康数据。</p>
-                    <p>您的数据同步完全依赖于您自己的 Apple ID 及其关联的 iCloud 账户。</p>
-                </div>
+                <p>我们没有任何中央服务器来存储您的私人健康数据。</p>
+                <p>您的数据同步完全依赖于您自己的 Apple ID 及其关联的 iCloud 账户。</p>
                 <p>我们绝不会，也无法向任何第三方出售或共享您的健康信息。</p>
             </div>
             
-            <div class="section">
+            <div class="card">
                 <h2>4. 您的权利</h2>
-                <ul>
-                    <li>您可以随时在 App 内或系统设置中修改、删除您的所有健康记录</li>
-                    <li>由于数据未存储在我们的服务器上，当您在设备上删除数据或卸载应用时，数据即被彻底清除</li>
-                    <li>您可以通过「设置」→「Apple ID」→「iCloud」→「管理账户储存空间」来管理您的 iCloud 数据</li>
-                </ul>
+                <p>您可以随时在 App 内或系统设置中修改、删除您的所有健康记录。</p>
+                <p>由于数据未存储在我们的服务器上，当您在设备上删除数据或卸载应用时，数据即被彻底清除。</p>
             </div>
             
-            <div class="section">
-                <h2>5. 信息收集清单</h2>
-                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
-                    <thead>
-                        <tr style="background: #f8f9fa;">
-                            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6;">数据类型</th>
-                            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6;">用途</th>
-                            <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6;">存储位置</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">匿名用户 ID</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">身份识别</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">本地设备</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">健康数据（血常规、肝功能等）</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">记录与展示</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">本地 + iCloud</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">用药计划</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">提醒功能</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">本地 + iCloud</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">治疗笔记</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">记录功能</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">本地 + iCloud</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">化验单图片</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">OCR 识别</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #dee2e6;">本地 + iCloud</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="section">
-                <h2>6. 联系我们</h2>
+            <div class="card">
+                <h2>5. 联系我们</h2>
                 <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
-                <p>📧 邮箱：<a href="mailto:leukanote@163.com" style="color: #667eea;">leukanote@163.com</a></p>
-            </div>
-            
-            <div class="section">
-                <h2>7. 政策更新</h2>
-                <p>我们可能会不时更新本隐私政策。任何更改将在本页面发布，并在页顶标注最新更新日期。继续使用我们的服务即表示您同意修订后的政策。</p>
+                <p>📧 邮箱：<a href="mailto:leukanote@163.com" style="color: var(--primary);">leukanote@163.com</a></p>
             </div>
         </div>
         
-        <footer class="footer">
-            <p>© 2024 小白随记 Leukanote. All rights reserved.</p>
-            <p style="margin-top: 10px;"><a href="index.html">返回支持主页</a> | <a href="terms.html">用户协议</a></p>
+        <!-- 英文内容 -->
+        <div class="en">
+            <div class="card">
+                <h2>1. Core Privacy Statement</h2>
+                <div class="highlight">
+                    <p>Leukanote is a pure local and iCloud-synced health management tool. We take your privacy very seriously.</p>
+                    <p>All your health data (lab reports, indicators, notes, etc.) is stored locally on your device or encrypted via your private Apple iCloud.</p>
+                    <p>The developer (we) cannot access, view, collect, or analyze any of your health records.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>2. Information Collection & Use</h2>
+                <p><strong>Authentication:</strong> We only use "Sign in with Apple" for authentication, obtaining your anonymous user ID and optional nickname. We never collect sensitive information like phone numbers.</p>
+                <p><strong>Local OCR:</strong> When you scan lab reports, text recognition runs entirely on your iPhone locally (based on Apple Vision framework). Images are never uploaded to any third-party server.</p>
+                <p><strong>System Permissions:</strong> Camera and photo library permissions are only for local document scanning; notification permission is only for sending local medication reminders on your device.</p>
+            </div>
+            
+            <div class="card">
+                <h2>3. Data Storage & Sharing</h2>
+                <p>We do not have any central servers to store your private health data.</p>
+                <p>Your data sync depends entirely on your own Apple ID and associated iCloud account.</p>
+                <p>We will never, and cannot, sell or share your health information with any third party.</p>
+            </div>
+            
+            <div class="card">
+                <h2>4. Your Rights</h2>
+                <p>You can modify or delete all your health records anytime in the app or system settings.</p>
+                <p>Since data is not stored on our servers, when you delete data on your device or uninstall the app, the data is completely removed.</p>
+            </div>
+            
+            <div class="card">
+                <h2>5. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <p>📧 Email: <a href="mailto:leukanote@163.com" style="color: var(--primary);">leukanote@163.com</a></p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 Leukanote</p>
+            <p style="margin-top: 8px;"><a href="index.html">Home</a> · <a href="terms.html">
+                <span class="zh">用户协议</span>
+                <span class="en">Terms</span>
+            </a></p>
         </footer>
     </div>
+    
+    <script>
+        function setLang(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.toggle('active', 
+                    (lang === 'zh' && btn.textContent === '中文') ||
+                    (lang === 'en' && btn.textContent === 'English')
+                );
+            });
+            localStorage.setItem('leukanote-lang', lang);
+        }
+        
+        const saved = localStorage.getItem('leukanote-lang');
+        if (saved) setLang(saved);
+    </script>
 </body>
 </html>
