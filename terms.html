@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户协议 - 小白随记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section p {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .danger-box {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .danger-box strong {
+            color: #721c24;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回支持主页</a>
+        
+        <div class="header">
+            <h1>用户协议</h1>
+            <p>最后更新日期：2024年</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>1. 小白的定位：个人健康辅助记录工具</h2>
+                <p>「小白随记」由个人开发者提供，初衷是作为您的个人「电子健康笔记」，帮助您理清纷乱的化验数据。我们希望成为您康复路上的温情陪伴者。</p>
+                
+                <div class="danger-box">
+                    <strong>【重要性质声明】</strong>
+                    小白随记仅提供信息展示与记录功能，不具备也不提供医疗诊断、监护或治疗功能。开发者在此声明本应用所呈现的所有内容（包括但不限于识别数据、趋势图表、百科知识）均不构成医疗诊断依据，亦不属于任何形式的医疗建议。
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>2. 医疗决策的叮嘱</h2>
+                <p>小白的数据识别与分析能力终究不能替代医生的专业判断。化验单上的每一个数字，都需要主治医生结合您的临床症状、体征及其他检查结果进行综合解读。</p>
+                
+                <div class="danger-box">
+                    <strong>【安全红线】</strong>
+                    在您需要调整药物剂量、改变治疗方案或做出任何影响健康的决策前，请务必咨询具有执业资格的专业医生。若您因参考本 App 信息而自行改变医疗行为，由此产生的任何健康风险或后果，由用户自行承担。
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>3. 关于数据准确性（用户核对义务）</h2>
+                <p>受限于图像质量、纸张反光或 AI 技术局限，小白在识别化验单时可能产生误差（如小数点错位、指标名误认）。</p>
+                
+                <div class="warning-box">
+                    <strong>【核对义务】</strong>
+                    您理解并同意，在点击「保存」按钮前，您有责任对识别结果进行人工核对与纠正。小白对因用户未履行核对义务而导致的数据记录错误不承担法律责任。
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>4. 账号与数据</h2>
+                <ul>
+                    <li><strong>数据归属</strong>：您的数据完全存储于您的 iPhone 硬件及个人 iCloud 中，开发者无法访问。请务必保护好您的设备密码，防止隐私泄露。</li>
+                    <li><strong>账号注销</strong>：您可以在 App 内申请注销账号，注销后所有数据将被清除且无法恢复。</li>
+                    <li><strong>数据备份</strong>：建议您定期通过 iCloud 或其他方式备份重要数据。</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>5. 使用规范</h2>
+                <p>您同意在使用小白随记时遵守以下规范：</p>
+                <ul>
+                    <li>不得使用本应用进行任何违法活动</li>
+                    <li>不得干扰或破坏本应用的正常运行</li>
+                    <li>不得尝试未经授权访问本应用的任何部分</li>
+                    <li>不得利用本应用传播恶意软件或病毒</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>6. 免责声明</h2>
+                <p>在法律允许的最大范围内，开发者不对以下情况承担责任：</p>
+                <ul>
+                    <li>因使用或无法使用本应用而导致的任何直接或间接损失</li>
+                    <li>因网络中断、系统维护等技术原因导致的服务中断</li>
+                    <li>因用户设备故障、丢失导致的数据丢失</li>
+                    <li>因第三方服务（如 iCloud）故障导致的问题</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>7. 知识产权</h2>
+                <p>小白随记的界面设计、代码、图标等知识产权归开发者所有。未经许可，不得复制、修改、传播本应用的任何部分。</p>
+            </div>
+            
+            <div class="section">
+                <h2>8. 协议更新</h2>
+                <p>随着功能完善，我们可能会更新本协议。若您继续使用，即代表您理解并接受更新后的条款。若对条款有异议，请停止使用并卸载本应用。</p>
+                <p>重大变更将通过 App 内通知或网站公告的方式告知用户。</p>
+            </div>
+            
+            <div class="section">
+                <h2>9. 联系我们</h2>
+                <p>如果您对本用户协议有任何疑问，请通过以下方式联系我们：</p>
+                <p>📧 邮箱：<a href="mailto:leukanote@163.com" style="color: #667eea;">leukanote@163.com</a></p>
+            </div>
+            
+            <div class="section">
+                <h2>10. 适用法律</h2>
+                <p>本协议受中华人民共和国法律管辖。如发生争议，双方应友好协商解决；协商不成的，任何一方均可向开发者所在地有管辖权的人民法院提起诉讼。</p>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2024 小白随记 Leukanote. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="index.html">返回支持主页</a> | <a href="privacy.html">隐私政策</a></p>
+        </footer>
+    </div>
+</body>
+</html>
