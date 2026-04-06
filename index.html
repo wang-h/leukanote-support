@@ -104,15 +104,7 @@
             font-style: italic;
         }
         
-        .hero .disclaimer {
-            font-size: 13px;
-            color: var(--text-secondary);
-            opacity: 0.6;
-            margin-top: 16px;
-            padding: 8px 16px;
-            background: rgba(0,0,0,0.03);
-            border-radius: 20px;
-        }
+
         
         .card {
             background: var(--card);
@@ -291,7 +283,10 @@
     <div class="container">
         <div class="hero">
             <div class="app-icon"><img src="icon.png" alt="Leukanote" width="120" height="120" style="border-radius: 28px;"></div>
-            <h1>Leukanote</h1>
+            <h1>
+                <span class="zh">小白随记</span>
+                <span class="en">Leukanote</span>
+            </h1>
             <p class="tagline">
                 <span class="zh">您的个人健康记录助手</span>
                 <span class="en">Your Personal Health Records Assistant</span>
@@ -299,10 +294,6 @@
             <p class="etymology">
                 <span class="zh">小白随记 —— 如白纸般清晰记录您的健康数据</span>
                 <span class="en">From Greek "leukos" (λευκός), meaning white & clear — a blank canvas for your health journey</span>
-            </p>
-            <p class="disclaimer">
-                <span class="zh">本应用不提供医疗诊断或治疗建议</span>
-                <span class="en">This app does not provide medical diagnosis or treatment advice</span>
             </p>
         </div>
         
@@ -397,7 +388,16 @@
         </div>
         
         <footer>
-            <p>© 2026 Leukanote. <span class="zh">保留所有权利</span><span class="en">All rights reserved</span>.</p>
+            <p>
+                <span class="zh">© 2026 小白随记</span>
+                <span class="en">© 2026 Leukanote</span>
+                <span class="zh">保留所有权利</span>
+                <span class="en">All rights reserved</span>.
+            </p>
+            <p style="margin-top: 8px; font-size: 13px; opacity: 0.7;">
+                <span class="zh">免责声明：本应用为单纯记录工具，不提供任何医疗诊断或治疗建议</span>
+                <span class="en">Disclaimer: This app is a recording tool only and does not provide any medical diagnosis or treatment advice</span>
+            </p>
 
         </footer>
     </div>
