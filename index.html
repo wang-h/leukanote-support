@@ -274,10 +274,10 @@
         }
     </style>
 </head>
-<body data-lang="zh">
+<body data-lang="en">
     <div class="lang-switch">
-        <button class="active" onclick="setLang('zh')">中文</button>
-        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('zh')">中文</button>
+        <button class="active" onclick="setLang('en')">English</button>
     </div>
     
     <div class="container">
@@ -406,16 +406,16 @@
         function setLang(lang) {
             document.body.setAttribute('data-lang', lang);
             document.querySelectorAll('.lang-switch button').forEach(btn => {
-                btn.classList.toggle('active', 
-                    (lang === 'zh' && btn.textContent === '中文') ||
-                    (lang === 'en' && btn.textContent === 'English')
-                );
+                const isZh = (lang === 'zh' && (btn.textContent === '中文' || btn.innerText === '中文'));
+                const isEn = (lang === 'en' && (btn.textContent === 'English' || btn.innerText === 'English'));
+                btn.classList.toggle('active', isZh || isEn);
             });
             localStorage.setItem('leukanote-lang', lang);
         }
         
-        const saved = localStorage.getItem('leukanote-lang');
-        if (saved) setLang(saved);
+        // Default to 'en' if no preference saved
+        const saved = localStorage.getItem('leukanote-lang') || 'en';
+        setLang(saved);
     </script>
 </body>
 </html>
