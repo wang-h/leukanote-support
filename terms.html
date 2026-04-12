@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use - Leukanote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #007AFF;
             --text: #1D1D1F;
             --text-secondary: #86868B;
             --bg: #FFFFFF;
+            --section-bg: #F5F5F7;
             --divider: #D2D2D7;
             --danger: #FF3B30;
         }
@@ -17,58 +20,62 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 100px 24px 60px;
-        }
-
         .nav {
             position: fixed;
-            top: 0; left: 0; right: 0; height: 60px;
+            top: 0; left: 0; right: 0; height: 64px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
             z-index: 1000; display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid var(--divider);
         }
 
-        .lang-toggle { display: flex; gap: 20px; }
+        .lang-toggle { display: flex; gap: 24px; }
         .lang-toggle button {
             background: none; border: none; color: var(--text-secondary);
-            font-size: 13px; font-weight: 500; cursor: pointer;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.05em;
         }
         .lang-toggle button.active { color: var(--primary); }
 
+        .container { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+
         .back-link {
-            display: block; margin-bottom: 40px;
-            color: var(--text-secondary); text-decoration: none; font-size: 15px;
+            display: inline-block; margin-bottom: 40px; color: var(--text-secondary);
+            text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s;
         }
+        .back-link:hover { color: var(--primary); }
 
-        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
-        .last-updated { color: var(--text-secondary); font-size: 14px; margin-bottom: 60px; }
+        header { margin-bottom: 64px; }
+        header h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .last-updated { color: var(--text-secondary); font-size: 14px; }
 
-        section { margin-bottom: 48px; }
-        h2 { font-size: 19px; font-weight: 600; margin-bottom: 16px; }
-        p { margin-bottom: 16px; color: #333; }
+        section { margin-bottom: 64px; }
+        .section-header { margin-bottom: 24px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+        .section-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
 
-        .notice-box {
-            padding: 24px; border-radius: 12px; margin: 24px 0; font-weight: 500;
-        }
-        .danger { background-color: #FFF2F2; color: var(--danger); border-left: 4px solid var(--danger); }
+        .content-box { background: var(--section-bg); padding: 32px; border-radius: 20px; font-size: 16px; color: #333; }
+        .content-box p { margin-bottom: 16px; }
+        .content-box p:last-child { margin-bottom: 0; }
 
-        footer {
-            margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--divider);
-            text-align: center; color: var(--text-secondary); font-size: 13px;
-        }
+        .danger-card { border-left: 4px solid var(--danger); background: #FFF2F2; padding: 24px; border-radius: 0 16px 16px 0; font-weight: 600; margin-bottom: 40px; color: var(--danger); }
+
+        footer { text-align: center; color: var(--text-secondary); font-size: 14px; border-top: 0.5px solid var(--divider); padding-top: 40px; margin-top: 80px; }
 
         [data-lang="en"] .zh { display: none; }
         [data-lang="zh"] .en { display: none; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            .content-box { padding: 24px; }
+        }
     </style>
 </head>
 <body data-lang="en">
@@ -80,7 +87,7 @@
     </nav>
 
     <div class="container">
-        <a href="index.html" class="back-link">&larr; <span class="en">Home</span><span class="zh">首页</span></a>
+        <a href="index.html" class="back-link">&larr; <span class="en">Back to Home</span><span class="zh">返回首页</span></a>
         
         <header>
             <h1>
@@ -88,44 +95,62 @@
                 <span class="zh">用户协议</span>
             </h1>
             <p class="last-updated">
-                <span class="en">Last updated: April 12, 2026</span>
-                <span class="zh">最后更新：2026年4月12日</span>
+                <span class="en">Effective Date: April 12, 2026</span>
+                <span class="zh">生效日期：2026年4月12日</span>
             </p>
         </header>
 
+        <div class="danger-card">
+            <span class="en">Leukanote is a recording tool only. It does NOT provide medical diagnosis or professional medical advice.</span>
+            <span class="zh">小白随记仅作为记录工具。它不提供医疗诊断或专业医疗建议。</span>
+        </div>
+
         <section>
-            <h2>
-                <span class="en">1. Medical Disclaimer</span>
-                <span class="zh">1. 医疗免责声明</span>
-            </h2>
-            <div class="notice-box danger">
-                <p class="en">Leukanote is a health recording tool only. It does NOT provide medical diagnosis, treatment, or clinical advice. Always consult a professional doctor before making medical decisions.</p>
-                <p class="zh">小白随记仅作为记录工具。它不提供医疗诊断、治疗或临床建议。在做出医疗决策前，请务必咨询专业医生。</p>
+            <div class="section-header">
+                <span class="section-tag">01 / Disclaimer</span>
+                <h2>
+                    <span class="en">Medical Disclaimer</span>
+                    <span class="zh">医疗免责声明</span>
+                </h2>
             </div>
-            <p class="en">This app is not for emergencies. In an emergency, please call local emergency services immediately.</p>
-            <p class="zh">本应用不适用于紧急情况。如遇紧急医疗状况，请立即拨打急救电话。</p>
+            <div class="content-box">
+                <p class="en">The information provided by Leukanote (including trends, indicators, and charts) does not constitute a medical diagnosis. Always consult with a qualified physician before making any medical decisions or changes to your treatment.</p>
+                <p class="zh">小白随记提供的信息（包括趋势、指标和图表）不构成医疗诊断。在做出任何医疗决策或更改治疗方案前，请务必咨询合格的医生。</p>
+                <p class="en" style="margin-top: 12px;">**Emergency Note:** This app is not for medical emergencies. In an emergency, please call 120, 911, or your local emergency services immediately.</p>
+                <p class="zh" style="margin-top: 12px;">**紧急说明：**本应用不适用于医疗紧急情况。如遇紧急情况，请立即拨打 120 或当地急救电话。</p>
+            </div>
         </section>
 
         <section>
-            <h2>
-                <span class="en">2. Data Verification</span>
-                <span class="zh">2. 数据核对义务</span>
-            </h2>
-            <p class="en">Due to image quality or AI limitations, OCR recognition may have errors. You are responsible for manually verifying and correcting results before saving.</p>
-            <p class="zh">受限于图像质量或 AI 技术，文字识别可能产生误差。您有责任在保存前对识别结果进行人工核对与纠正。</p>
+            <div class="section-header">
+                <span class="section-tag">02 / Accuracy</span>
+                <h2>
+                    <span class="en">Data Verification</span>
+                    <span class="zh">数据核对义务</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">While our OCR technology is advanced, it is not perfect. Users are responsible for manually verifying the accuracy of recognized data before saving it to their records.</p>
+                <p class="zh">虽然我们的 OCR 技术非常先进，但它并非完美无缺。用户有责任在将识别数据保存到记录前，手动核对其准确性。</p>
+            </div>
         </section>
 
         <section>
-            <h2>
-                <span class="en">3. Privacy & Security</span>
-                <span class="zh">3. 隐私与安全</span>
-            </h2>
-            <p class="en">Your data is stored in your private iCloud. Please protect your device password. Developers cannot recover your data if you lose access to your account.</p>
-            <p class="zh">您的数据存储在私有 iCloud 中。请保护好设备密码。如果您丢失了账户访问权限，开发者无法恢复您的数据。</p>
+            <div class="section-header">
+                <span class="section-tag">03 / Data</span>
+                <h2>
+                    <span class="en">Account & Data</span>
+                    <span class="zh">账号与数据</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">Your data is stored in your private iCloud. Developers cannot recover your data if you lose access to your device or Apple account. Please ensure your device is securely managed.</p>
+                <p class="zh">您的数据存储在您的私有 iCloud 中。如果您丢失了设备或 Apple 账号的访问权限，开发者将无法恢复您的数据。请确保妥善管理您的设备。</p>
+            </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Leukanote</p>
+            <p>&copy; 2026 Leukanote.</p>
         </footer>
     </div>
 
@@ -140,8 +165,7 @@
             });
             localStorage.setItem('leukanote-lang', lang);
         }
-        let saved = localStorage.getItem('leukanote-lang');
-        if (!saved) saved = 'en';
+        let saved = localStorage.getItem('leukanote-lang') || 'en';
         setLang(saved);
     </script>
 </body>

@@ -4,88 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Leukanote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #007AFF;
             --text: #1D1D1F;
             --text-secondary: #86868B;
             --bg: #FFFFFF;
+            --section-bg: #F5F5F7;
             --divider: #D2D2D7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 100px 24px 60px;
-        }
-
         .nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
+            top: 0; left: 0; right: 0; height: 64px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            z-index: 1000; display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid var(--divider);
         }
 
-        .lang-toggle { display: flex; gap: 20px; }
+        .lang-toggle { display: flex; gap: 24px; }
         .lang-toggle button {
             background: none; border: none; color: var(--text-secondary);
-            font-size: 13px; font-weight: 500; cursor: pointer;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.05em;
         }
         .lang-toggle button.active { color: var(--primary); }
 
+        .container { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+
         .back-link {
-            display: block;
-            margin-bottom: 40px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
+            display: inline-block; margin-bottom: 40px; color: var(--text-secondary);
+            text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s;
         }
+        .back-link:hover { color: var(--primary); }
 
-        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
-        .last-updated { color: var(--text-secondary); font-size: 14px; margin-bottom: 60px; }
+        header { margin-bottom: 64px; }
+        header h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .last-updated { color: var(--text-secondary); font-size: 14px; }
 
-        section { margin-bottom: 48px; }
-        h2 { font-size: 19px; font-weight: 600; margin-bottom: 16px; }
-        p { margin-bottom: 16px; color: #333; }
-        ul { margin-left: 20px; margin-bottom: 16px; color: #333; }
-        li { margin-bottom: 8px; }
+        section { margin-bottom: 64px; }
+        .section-header { margin-bottom: 24px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+        .section-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
 
-        .highlight-box {
-            background-color: #F5F5F7;
-            padding: 24px;
-            border-radius: 12px;
-            margin: 24px 0;
-            font-weight: 500;
-        }
+        .content-box { background: var(--section-bg); padding: 32px; border-radius: 20px; font-size: 16px; color: #333; }
+        .content-box p { margin-bottom: 16px; }
+        .content-box p:last-child { margin-bottom: 0; }
+        .content-box ul { margin-left: 20px; margin-top: 12px; }
+        .content-box li { margin-bottom: 12px; }
 
-        footer {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid var(--divider);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
+        .highlight-card { border-left: 4px solid var(--primary); background: #F0F7FF; padding: 24px; border-radius: 0 16px 16px 0; font-weight: 600; margin-bottom: 40px; }
+
+        footer { text-align: center; color: var(--text-secondary); font-size: 14px; border-top: 0.5px solid var(--divider); padding-top: 40px; margin-top: 80px; }
 
         [data-lang="en"] .zh { display: none; }
         [data-lang="zh"] .en { display: none; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            .content-box { padding: 24px; }
+        }
     </style>
 </head>
 <body data-lang="en">
@@ -97,7 +88,7 @@
     </nav>
 
     <div class="container">
-        <a href="index.html" class="back-link">&larr; <span class="en">Home</span><span class="zh">首页</span></a>
+        <a href="index.html" class="back-link">&larr; <span class="en">Back to Home</span><span class="zh">返回首页</span></a>
         
         <header>
             <h1>
@@ -105,64 +96,74 @@
                 <span class="zh">隐私政策</span>
             </h1>
             <p class="last-updated">
-                <span class="en">Last updated: April 12, 2026</span>
-                <span class="zh">最后更新：2026年4月12日</span>
+                <span class="en">Effective Date: April 12, 2026</span>
+                <span class="zh">生效日期：2026年4月12日</span>
             </p>
         </header>
 
+        <div class="highlight-card">
+            <span class="en">Your health records never leave your hands. We do not access, store, or sell your private data.</span>
+            <span class="zh">您的健康记录永远掌握在自己手中。我们不会获取、存储或出售您的私人数据。</span>
+        </div>
+
         <section>
-            <div class="highlight-box">
-                <p class="en">Your data belongs entirely to you. We do not access, read, share, or sell any of your health data.</p>
-                <p class="zh">您的数据完全归您所有。我们不会获取、阅读、共享或出售您的任何健康数据。</p>
+            <div class="section-header">
+                <span class="section-tag">01 / Data Storage</span>
+                <h2>
+                    <span class="en">Data Storage & Encryption</span>
+                    <span class="zh">数据存储与加密</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">All health data, lab reports, and indicators you enter are stored exclusively on your iPhone device and your personal Apple iCloud account. We do not use any centralized servers.</p>
+                <p class="zh">您输入的所有健康数据、化验单和指标仅存储在您的 iPhone 设备和您个人的 Apple iCloud 账户中。我们不使用任何中央服务器。</p>
             </div>
         </section>
 
         <section>
-            <h2>
-                <span class="en">1. Data Storage</span>
-                <span class="zh">1. 数据存储</span>
-            </h2>
-            <p class="en">Leukanote stores all health records (lab data, indicators, notes) exclusively on your iOS device and your personal iCloud account. We do not operate any central servers.</p>
-            <p class="zh">小白随记将所有健康记录（化验数据、指标、笔记）仅存储在您的 iOS 设备和您个人的 iCloud 账户中。我们不运行任何中央服务器。</p>
+            <div class="section-header">
+                <span class="section-tag">02 / Authentication</span>
+                <h2>
+                    <span class="en">Sign in with Apple</span>
+                    <span class="zh">账户与身份</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">We utilize "Sign in with Apple" for secure and anonymous authentication. We do not collect your real name, phone number, or residential address.</p>
+                <p class="zh">我们利用“通过 Apple 登录”进行安全且匿名的身份验证。我们不会收集您的真实姓名、手机号或家庭住址。</p>
+            </div>
         </section>
 
         <section>
-            <h2>
-                <span class="en">2. Identity & Privacy</span>
-                <span class="zh">2. 身份与隐私</span>
-            </h2>
-            <p class="en">We use "Sign in with Apple" for secure, anonymous authentication. We do not collect your real name, phone number, or email address.</p>
-            <p class="zh">我们使用“通过 Apple 登录”进行安全、匿名的身份验证。我们不会收集您的真实姓名、手机号或邮箱地址。</p>
+            <div class="section-header">
+                <span class="section-tag">03 / Processing</span>
+                <h2>
+                    <span class="en">On-Device Processing</span>
+                    <span class="zh">本地化处理</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">Any lab report scanning (OCR) is performed locally on your device using Apple's Vision framework. Images are never uploaded to any external server.</p>
+                <p class="zh">任何化验单扫描（OCR）均使用 Apple 的 Vision 框架在您的设备本地执行。图片绝不会上传到任何外部服务器。</p>
+            </div>
         </section>
 
         <section>
-            <h2>
-                <span class="en">3. Local Processing</span>
-                <span class="zh">3. 本地化处理</span>
-            </h2>
-            <p class="en">Lab report recognition (OCR) is performed entirely on-device using Apple's Vision technology. Images are never uploaded to any external server.</p>
-            <p class="zh">化验单识别（OCR）完全基于 Apple 的 Vision 技术在设备本地运行。图片绝不会上传到任何外部服务器。</p>
-        </section>
-
-        <section>
-            <h2>
-                <span class="en">4. Your Rights</span>
-                <span class="zh">4. 您的权利</span>
-            </h2>
-            <p class="en">You have absolute control over your data. You can delete individual records or your entire account at any time within the app settings.</p>
-            <p class="zh">您对数据拥有绝对控制权。您可以随时在应用设置中删除单条记录或注销整个账号。</p>
-        </section>
-
-        <section>
-            <h2>
-                <span class="en">5. Contact</span>
-                <span class="zh">5. 联系我们</span>
-            </h2>
-            <p>Email: <a href="mailto:leukanote@icloud.com" style="color: var(--primary); text-decoration: none;">leukanote@icloud.com</a></p>
+            <div class="section-header">
+                <span class="section-tag">04 / Rights</span>
+                <h2>
+                    <span class="en">Your Rights</span>
+                    <span class="zh">您的权利</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">You have the absolute right to modify or delete your data at any time. When you use the "Delete Account" feature in the app settings, all data associations will be permanently removed.</p>
+                <p class="zh">您有权随时修改或删除您的数据。当您在应用设置中使用“注销账号”功能时，所有数据关联都将被永久移除。</p>
+            </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Leukanote</p>
+            <p>&copy; 2026 Leukanote. <span class="en">Privacy by design.</span><span class="zh">隐私至上。</span></p>
         </footer>
     </div>
 
@@ -177,8 +178,7 @@
             });
             localStorage.setItem('leukanote-lang', lang);
         }
-        let saved = localStorage.getItem('leukanote-lang');
-        if (!saved) saved = 'en';
+        let saved = localStorage.getItem('leukanote-lang') || 'en';
         setLang(saved);
     </script>
 </body>
