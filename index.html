@@ -108,7 +108,7 @@
 
     <div class="container">
         <header class="hero">
-            <img src="icon.png" alt="Leukanote Icon" class="app-icon">
+            <img src="icon-120.png" alt="Leukanote Icon" class="app-icon">
             <h1>
                 <span class="en">Leukanote</span>
                 <span class="zh">小白随记</span>
@@ -267,6 +267,10 @@
 
         let saved = localStorage.getItem('leukanote-lang');
         if (!saved) saved = 'en';
+        setLang(saved);
+    </script>
+</body>
+</html>
         setLang(saved);
     </script>
 </body>
