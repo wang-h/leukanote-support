@@ -12,182 +12,89 @@
             --text: #1D1D1F;
             --text-secondary: #86868B;
             --bg: #FFFFFF;
+            --section-bg: #F5F5F7;
             --divider: #D2D2D7;
-            --hover-bg: #F5F5F7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 100px 24px 60px;
-        }
-
-        /* Language Switcher */
+        /* Nav */
         .nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
+            top: 0; left: 0; right: 0; height: 64px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            z-index: 1000; display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid var(--divider);
         }
 
-        .lang-toggle {
-            display: flex;
-            gap: 20px;
-        }
-
+        .lang-toggle { display: flex; gap: 24px; }
         .lang-toggle button {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s;
-            padding: 4px 8px;
+            background: none; border: none; color: var(--text-secondary);
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.05em;
         }
+        .lang-toggle button.active { color: var(--primary); }
 
-        .lang-toggle button.active {
-            color: var(--primary);
-        }
+        .container { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
 
         /* Hero */
-        .hero {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
+        .hero { text-align: center; margin-bottom: 100px; }
         .app-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 32px;
-            border-radius: 22px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 120px; height: 120px; margin: 0 auto 32px;
+            border-radius: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
-        .hero h1 {
-            font-size: 40px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-
-        .hero p {
-            font-size: 21px;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
+        .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .hero p { font-size: 22px; color: var(--text-secondary); font-weight: 400; max-width: 500px; margin: 0 auto; }
 
         /* Sections */
-        section {
-            margin-bottom: 64px;
-        }
+        section { margin-bottom: 80px; }
+        .section-header { margin-bottom: 32px; }
+        .section-header h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
+        .section-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
 
-        section h2 {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--divider);
-        }
+        /* Story Card */
+        .story-box { background: var(--section-bg); padding: 40px; border-radius: 24px; line-height: 1.8; font-size: 18px; }
+        .story-box p { margin-bottom: 20px; }
+        .story-box p:last-child { margin-bottom: 0; }
 
-        .story-text {
-            font-size: 17px;
-            color: var(--text);
-            line-height: 1.6;
-        }
+        /* FAQ Grid */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .faq-item h3 { font-size: 17px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .faq-item p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
 
-        .story-text p {
-            margin-bottom: 16px;
+        /* Legal & Contact List */
+        .list-group { background: var(--section-bg); border-radius: 20px; overflow: hidden; }
+        .list-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 24px; text-decoration: none; color: inherit;
+            border-bottom: 0.5px solid var(--divider); transition: background 0.2s;
         }
+        .list-item:last-child { border-bottom: none; }
+        .list-item:hover { background: #EBEBF0; }
+        .list-item .title { font-weight: 600; font-size: 16px; }
+        .list-item .value { color: var(--text-secondary); font-size: 15px; }
+        .list-item .arrow { color: var(--divider); font-weight: 400; font-size: 20px; }
 
-        /* Links & Info */
-        .info-list {
-            list-style: none;
-        }
+        footer { text-align: center; color: var(--text-secondary); font-size: 14px; border-top: 0.5px solid var(--divider); padding-top: 40px; margin-top: 100px; }
+        footer a { color: var(--primary); text-decoration: none; }
 
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #F5F5F7;
-            text-decoration: none;
-            color: inherit;
-            transition: opacity 0.2s;
-        }
-
-        .info-item:hover {
-            opacity: 0.7;
-        }
-
-        .info-item span:first-child {
-            font-weight: 500;
-        }
-
-        .info-item span:last-child {
-            color: var(--primary);
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 24px;
-        }
-
-        .faq-item h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .faq-item p {
-            font-size: 15px;
-            color: var(--text-secondary);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 100px;
-            padding-top: 40px;
-            border-top: 1px solid var(--divider);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 8px;
-        }
-
-        /* Language visibility */
         [data-lang="en"] .zh { display: none; }
         [data-lang="zh"] .en { display: none; }
 
-        @media (max-width: 600px) {
-            .container { padding-top: 80px; }
-            .hero h1 { font-size: 32px; }
+        @media (max-width: 768px) {
+            .faq-grid { grid-template-columns: 1fr; gap: 32px; }
+            .hero h1 { font-size: 36px; }
             .hero p { font-size: 18px; }
+            .story-box { padding: 32px 24px; font-size: 16px; }
         }
     </style>
 </head>
@@ -203,93 +110,122 @@
         <header class="hero">
             <img src="icon.png" alt="Leukanote Icon" class="app-icon">
             <h1>
-                <span class="en">Leukanote</span>
-                <span class="zh">小白随记</span>
+                <span class="en">Clearly Healthy.</span>
+                <span class="zh">健康，清晰可见。</span>
             </h1>
             <p>
-                <span class="en">Your Health, Clearly Recorded.</span>
-                <span class="zh">健康数据，清晰随记。</span>
+                <span class="en">The most private way to track your lab reports and health indicators.</span>
+                <span class="zh">最私密的化验单与健康指标管理助手。</span>
             </p>
         </header>
 
         <section id="story">
-            <h2>
-                <span class="en">The Mission</span>
-                <span class="zh">开发初衷</span>
-            </h2>
-            <div class="story-text">
-                <p class="en">Faced with stacks of complex lab reports, I often felt overwhelmed. Scattered data and fragile paper records were the starting point for Leukanote. I wanted a tool that, like a blank canvas ("Leukos"), could purely record health fluctuations.</p>
-                <p class="en">I insist on keeping all data locally on your device and in your private iCloud. These records are more than data—they are a family's most private trust.</p>
+            <div class="section-header">
+                <span class="section-tag">The Mission / 使命</span>
+                <h2>
+                    <span class="en">Why Leukanote?</span>
+                    <span class="zh">为什么开发「小白随记」？</span>
+                </h2>
+            </div>
+            <div class="story-box">
+                <p class="en">Managing medical records shouldn't be a struggle. Faced with stacks of complex lab reports, I realized we needed a tool that acts like a blank canvas—simple, pure, and focused on what matters: your health trends.</p>
+                <p class="en">Leukanote was built on two core principles: **Absolute Privacy** and **Visual Clarity**. By keeping all data on your device and iCloud, we ensure that your most sensitive information never leaves your hands.</p>
                 
-                <p class="zh">面对繁琐的化验单，我曾深感无助。零散的数据和易失的纸质记录，是「小白随记」诞生的起点。我希望打造一个像白纸（Leukos）一样纯净的工具，记录每一次健康波动。</p>
-                <p class="zh">我坚持将所有数据保留在您的本地设备和私有 iCloud 中。因为我知道，这些记录不仅是数据，更是每一位家庭成员最私密的托付。</p>
+                <p class="zh">管理医疗记录不该是一件痛苦的事。面对一叠叠复杂的化验单，我意识到我们需要一个像白纸一样纯粹的工具，去关注核心：您的健康趋势。</p>
+                <p class="zh">「小白随记」基于两个核心原则：**绝对隐私**与**视觉清晰**。通过将所有数据保留在您的设备和 iCloud 中，我们确保您最敏感的信息永远掌握在自己手中。</p>
             </div>
         </section>
 
         <section id="faq">
-            <h2>
-                <span class="en">Questions</span>
-                <span class="zh">常见问题</span>
-            </h2>
-            <div class="faq-item">
-                <h3>
-                    <span class="en">Where is my data?</span>
-                    <span class="zh">数据存储在哪里？</span>
-                </h3>
-                <p>
-                    <span class="en">Exclusively on your device and personal iCloud. We have no central servers and cannot access your health records.</span>
-                    <span class="zh">数据仅存储在您的设备和私有 iCloud 中。我们没有中央服务器，无法访问您的任何健康记录。</span>
-                </p>
+            <div class="section-header">
+                <span class="section-tag">FAQ / 常见问题</span>
+                <h2>
+                    <span class="en">General Questions</span>
+                    <span class="zh">您可能想了解</span>
+                </h2>
             </div>
-            <div class="faq-item">
-                <h3>
-                    <span class="en">How accurate is the OCR?</span>
-                    <span class="zh">文字识别准确吗？</span>
-                </h3>
-                <p>
-                    <span class="en">Recognition happens on-device using Apple Vision. While advanced, we recommend manual verification before saving.</span>
-                    <span class="zh">识别功能基于 Apple Vision 技术在本地运行。虽然技术先进，但建议在保存前进行人工核对。</span>
-                </p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><span>🔒</span><span class="en">Is my data secure?</span><span class="zh">我的数据安全吗？</span></h3>
+                    <p>
+                        <span class="en">Yes. All data is stored locally on your iPhone and synced via your private iCloud. We cannot access or see your records.</span>
+                        <span class="zh">是的。所有数据都存储在您的 iPhone 本地，并通过您私有的 iCloud 同步。我们无法访问或查看您的任何记录。</span>
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3><span>📸</span><span class="en">How does OCR work?</span><span class="zh">识别功能如何工作？</span></h3>
+                    <p>
+                        <span class="en">The app uses Apple's Vision framework to process images locally. No photos are ever uploaded to a server.</span>
+                        <span class="zh">应用使用 Apple 的 Vision 框架在本地处理图片。没有任何照片会被上传到服务器。</span>
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3><span>☁️</span><span class="en">Can I sync across devices?</span><span class="zh">可以多设备同步吗？</span></h3>
+                    <p>
+                        <span class="en">Absolutely. As long as you are signed into the same iCloud account, your data will sync automatically.</span>
+                        <span class="zh">当然可以。只要您登录同一个 iCloud 账号，您的数据就会自动同步。</span>
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3><span>🗑️</span><span class="en">How do I delete my data?</span><span class="zh">如何删除我的数据？</span></h3>
+                    <p>
+                        <span class="en">You can delete individual records anytime. To wipe everything, go to Settings > Account > Delete Account in the app.</span>
+                        <span class="zh">您可以随时删除单条记录。如需彻底清除，请在 App 内前往“设置 > 账号 > 注销账号”。</span>
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3><span>📶</span><span class="en">Does it work offline?</span><span class="zh">离线可以使用吗？</span></h3>
+                    <p>
+                        <span class="en">Yes, the core recording and OCR features work perfectly without an internet connection.</span>
+                        <span class="zh">可以，核心的记录和 OCR 识别功能在没有网络连接时也能完美运行。</span>
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3><span>📄</span><span class="en">Can I export my reports?</span><span class="zh">可以导出报告吗？</span></h3>
+                    <p>
+                        <span class="en">We are working on PDF/Excel export features. Currently, you can view and screenshot your trend charts.</span>
+                        <span class="zh">我们正在开发 PDF/Excel 导出功能。目前，您可以查看并截图您的趋势图表。</span>
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>
-                <span class="en">Contact</span>
-                <span class="zh">联系我们</span>
-            </h2>
-            <div class="info-list">
-                <a href="mailto:leukanote@icloud.com" class="info-item">
-                    <span>Email</span>
-                    <span>leukanote@icloud.com</span>
-                </a>
+        <section id="links">
+            <div class="section-header">
+                <span class="section-tag">Resources / 资源</span>
+                <h2>
+                    <span class="en">Support & Legal</span>
+                    <span class="zh">支持与法律</span>
+                </h2>
             </div>
-        </section>
-
-        <section id="legal">
-            <h2>
-                <span class="en">Legal</span>
-                <span class="zh">法律文件</span>
-            </h2>
-            <div class="info-list">
-                <a href="privacy.html" class="info-item">
-                    <span class="en">Privacy Policy</span>
-                    <span class="zh">隐私政策</span>
-                    <span>&rarr;</span>
+            <div class="list-group">
+                <a href="mailto:leukanote@icloud.com" class="list-item">
+                    <span class="title">Email Support</span>
+                    <span class="value">leukanote@icloud.com</span>
+                    <span class="arrow">&rsaquo;</span>
                 </a>
-                <a href="terms.html" class="info-item">
-                    <span class="en">Terms of Use</span>
-                    <span class="zh">用户协议</span>
-                    <span>&rarr;</span>
+                <a href="privacy.html" class="list-item">
+                    <span class="title">
+                        <span class="en">Privacy Policy</span>
+                        <span class="zh">隐私政策</span>
+                    </span>
+                    <span class="arrow">&rsaquo;</span>
+                </a>
+                <a href="terms.html" class="list-item">
+                    <span class="title">
+                        <span class="en">Terms of Use</span>
+                        <span class="zh">用户协议</span>
+                    </span>
+                    <span class="arrow">&rsaquo;</span>
                 </a>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Leukanote. <span class="en">All rights reserved.</span><span class="zh">保留所有权利。</span></p>
-            <p style="margin-top: 12px; font-size: 12px; color: #BBB;">
-                <span class="en">This app is a recording tool and does not provide medical diagnosis or advice.</span>
-                <span class="zh">本应用仅作为记录工具，不提供医疗诊断或建议。</span>
+            <p>&copy; 2026 Leukanote. <span class="en">Made for clarity and privacy.</span><span class="zh">为清晰与隐私而生。</span></p>
+            <p style="margin-top: 12px; font-size: 12px; opacity: 0.6;">
+                <span class="en">Medical Disclaimer: This app does not provide medical advice. Consult a doctor.</span>
+                <span class="zh">医疗免责声明：本应用不提供医疗建议。请咨询医生。</span>
             </p>
         </footer>
     </div>
