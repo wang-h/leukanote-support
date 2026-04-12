@@ -1,306 +1,184 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Leukanote</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
-            --primary: #0A84FF;
-            --text: #1C1C1E;
-            --text-secondary: #6E6E73;
-            --bg: #F5F5F7;
-            --card: #FFFFFF;
-            --border: #E5E5EA;
+            --primary: #007AFF;
+            --text: #1D1D1F;
+            --text-secondary: #86868B;
+            --bg: #FFFFFF;
+            --divider: #D2D2D7;
         }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
-            background: var(--bg);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            background: var(--card);
-            border-radius: 20px;
-            padding: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 4px;
-        }
-        
-        .lang-switch button {
-            padding: 8px 16px;
-            border: none;
-            background: transparent;
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-        
-        .lang-switch button.active {
-            background: var(--primary);
-            color: white;
-        }
-        
+
         .container {
-            max-width: 720px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 80px 20px 40px;
+            padding: 100px 24px 60px;
         }
-        
-        .header {
-            background: linear-gradient(135deg, #0A84FF 0%, #5856D6 100%);
-            border-radius: 24px;
-            padding: 48px 32px;
-            color: white;
-            margin-bottom: 24px;
-        }
-        
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .header p {
-            opacity: 0.85;
-            font-size: 16px;
-        }
-        
-        .card {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 32px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        }
-        
-        .card h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .card p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 15px;
-        }
-        
-        .card ul {
-            margin-left: 20px;
-            color: var(--text-secondary);
-        }
-        
-        .card li {
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-        
-        .highlight {
-            background: linear-gradient(135deg, #E3F2FF 0%, #F0E6FF 100%);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
-        }
-        
-        .highlight p {
-            color: var(--text);
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        
-        .highlight p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .back-link {
-            display: inline-flex;
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
             align-items: center;
+        }
+
+        .lang-toggle { display: flex; gap: 20px; }
+        .lang-toggle button {
+            background: none; border: none; color: var(--text-secondary);
+            font-size: 13px; font-weight: 500; cursor: pointer;
+        }
+        .lang-toggle button.active { color: var(--primary); }
+
+        .back-link {
+            display: block;
+            margin-bottom: 40px;
             color: var(--text-secondary);
             text-decoration: none;
-            margin-bottom: 24px;
             font-size: 15px;
+        }
+
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .last-updated { color: var(--text-secondary); font-size: 14px; margin-bottom: 60px; }
+
+        section { margin-bottom: 48px; }
+        h2 { font-size: 19px; font-weight: 600; margin-bottom: 16px; }
+        p { margin-bottom: 16px; color: #333; }
+        ul { margin-left: 20px; margin-bottom: 16px; color: #333; }
+        li { margin-bottom: 8px; }
+
+        .highlight-box {
+            background-color: #F5F5F7;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
             font-weight: 500;
         }
-        
-        .back-link:hover {
-            color: var(--primary);
-        }
-        
+
         footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--divider);
             text-align: center;
-            padding: 40px 0;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 13px;
         }
-        
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
+
         [data-lang="en"] .zh { display: none; }
         [data-lang="zh"] .en { display: none; }
-        
-        @media (max-width: 600px) {
-            .header { padding: 32px 24px; }
-            .header h1 { font-size: 26px; }
-            .card { padding: 24px; }
-        }
     </style>
 </head>
 <body data-lang="en">
-    <div class="lang-switch">
-        <button onclick="setLang('zh')">中文</button>
-        <button class="active" onclick="setLang('en')">English</button>
-    </div>
-    
+    <nav class="nav">
+        <div class="lang-toggle">
+            <button onclick="setLang('en')" class="active">English</button>
+            <button onclick="setLang('zh')">中文</button>
+        </div>
+    </nav>
+
     <div class="container">
-        <a href="index.html" class="back-link">← <span class="zh">返回</span><span class="en">Back</span></a>
+        <a href="index.html" class="back-link">&larr; <span class="en">Home</span><span class="zh">首页</span></a>
         
-        <div class="header">
+        <header>
             <h1>
-                <span class="zh">隐私政策</span>
                 <span class="en">Privacy Policy</span>
+                <span class="zh">隐私政策</span>
             </h1>
-            <p>
-                <span class="zh">最后更新：2026年4月12日</span>
+            <p class="last-updated">
                 <span class="en">Last updated: April 12, 2026</span>
+                <span class="zh">最后更新：2026年4月12日</span>
             </p>
-        </div>
-        
-        <!-- 中文内容 -->
-        <div class="zh">
-            <div class="card">
-                <h2>1. 隐私承诺</h2>
-                <div class="highlight">
-                    <p>【小白随记】是一款专注于个人健康记录的工具。我们深知健康数据的敏感性，承诺：</p>
-                    <p><strong>您的数据完全归您所有。</strong> 我们不会获取、阅读、共享或出售您的任何健康数据信息。</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>2. 数据收集与处理</h2>
-                <ul>
-                    <li><strong>健康记录：</strong> 您输入的化验单数据、指标及笔记均存储在您的 iOS 设备本地和您个人的 iCloud 空间中。我们不提供中央服务器，也无法访问这些数据。</li>
-                    <li><strong>身份信息：</strong> 我们使用 Apple 提供的“通过 Apple 登录”。我们仅接收 Apple 分配的匿名用户标识符，不收集您的真实姓名、手机号或邮箱。</li>
-                    <li><strong>本地 OCR (文字识别)：</strong> 化验单识别功能完全在您的设备本地运行（基于 Apple Vision 技术）。图片不会上传到任何服务器。</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h2>3. 数据存储与同步</h2>
-                <p>数据同步通过 Apple iCloud 传输。该过程受 Apple 端的端到端加密保护。这意味着除了您自己，任何人都无法通过网络解密或查看您的健康记录。</p>
-            </div>
+        </header>
 
-            <div class="card">
-                <h2>4. 账号注销与数据删除</h2>
-                <p>您拥有对数据的绝对控制权：</p>
-                <ul>
-                    <li><strong>手动删除：</strong> 您可以随时在 App 内删除单条记录或清空所有数据。</li>
-                    <li><strong>账号注销：</strong> 在 App 的“设置” -> “账号”中，您可以点击“注销账号”。注销后，我们持有的匿名 ID 关联将被永久解除。</li>
-                    <li><strong>应用卸载：</strong> 卸载应用会清除设备本地的所有数据。</li>
-                </ul>
+        <section>
+            <div class="highlight-box">
+                <p class="en">Your data belongs entirely to you. We do not access, read, share, or sell any of your health data.</p>
+                <p class="zh">您的数据完全归您所有。我们不会获取、阅读、共享或出售您的任何健康数据。</p>
             </div>
-            
-            <div class="card">
-                <h2>5. 数据用途说明</h2>
-                <p>我们郑重承诺：您的数据<strong>绝不</strong>用于广告投放、第三方追踪或任何形式的商业变现。数据仅用于为您提供记录展示和趋势分析功能。</p>
-            </div>
-            
-            <div class="card">
-                <h2>6. 联系我们</h2>
-                <p>如对本政策有任何疑问，请联系：</p>
-                <p>📧 邮箱：<a href="mailto:leukanote@icloud.com" style="color: var(--primary);">leukanote@icloud.com</a></p>
-            </div>
-        </div>
-        
-        <!-- 英文内容 -->
-        <div class="en">
-            <div class="card">
-                <h2>1. Privacy Commitment</h2>
-                <div class="highlight">
-                    <p>Leukanote is a personal health recording tool. We understand the sensitivity of health data and commit to:</p>
-                    <p><strong>Your data belongs entirely to you.</strong> We do not access, read, share, or sell any of your health data information.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>2. Data Collection & Processing</h2>
-                <ul>
-                    <li><strong>Health Records:</strong> Lab data, indicators, and notes you enter are stored locally on your iOS device and in your personal iCloud. We do not provide central servers and cannot access this data.</li>
-                    <li><strong>Identity:</strong> We use "Sign in with Apple." We only receive an anonymous identifier assigned by Apple and do not collect your real name, phone number, or email.</li>
-                    <li><strong>Local OCR:</strong> Lab report recognition runs entirely on your device (Apple Vision). Images are never uploaded to any server.</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h2>3. Storage & Syncing</h2>
-                <p>Data syncing is performed via Apple iCloud with end-to-end encryption. This means no one but you can decrypt or view your health records over the network.</p>
-            </div>
+        </section>
 
-            <div class="card">
-                <h2>4. Account & Data Deletion</h2>
-                <p>You have absolute control over your data:</p>
-                <ul>
-                    <li><strong>Manual Deletion:</strong> Delete single records or clear all data anytime within the app.</li>
-                    <li><strong>Account Deletion:</strong> Go to "Settings" -> "Account" -> "Delete Account". This permanently unlinks your anonymous ID.</li>
-                    <li><strong>Uninstalling:</strong> Removing the app clears all local data from your device.</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h2>5. Data Usage</h2>
-                <p>We solemnly promise: Your data is <strong>NEVER</strong> used for advertising, third-party tracking, or any commercial monetization. It is only used to provide you with record display and trend analysis.</p>
-            </div>
-            
-            <div class="card">
-                <h2>6. Contact Us</h2>
-                <p>If you have any questions, please contact us at:</p>
-                <p>📧 Email: <a href="mailto:leukanote@icloud.com" style="color: var(--primary);">leukanote@icloud.com</a></p>
-            </div>
-        </div>
-        
+        <section>
+            <h2>
+                <span class="en">1. Data Storage</span>
+                <span class="zh">1. 数据存储</span>
+            </h2>
+            <p class="en">Leukanote stores all health records (lab data, indicators, notes) exclusively on your iOS device and your personal iCloud account. We do not operate any central servers.</p>
+            <p class="zh">小白随记将所有健康记录（化验数据、指标、笔记）仅存储在您的 iOS 设备和您个人的 iCloud 账户中。我们不运行任何中央服务器。</p>
+        </section>
+
+        <section>
+            <h2>
+                <span class="en">2. Identity & Privacy</span>
+                <span class="zh">2. 身份与隐私</span>
+            </h2>
+            <p class="en">We use "Sign in with Apple" for secure, anonymous authentication. We do not collect your real name, phone number, or email address.</p>
+            <p class="zh">我们使用“通过 Apple 登录”进行安全、匿名的身份验证。我们不会收集您的真实姓名、手机号或邮箱地址。</p>
+        </section>
+
+        <section>
+            <h2>
+                <span class="en">3. Local Processing</span>
+                <span class="zh">3. 本地化处理</span>
+            </h2>
+            <p class="en">Lab report recognition (OCR) is performed entirely on-device using Apple's Vision technology. Images are never uploaded to any external server.</p>
+            <p class="zh">化验单识别（OCR）完全基于 Apple 的 Vision 技术在设备本地运行。图片绝不会上传到任何外部服务器。</p>
+        </section>
+
+        <section>
+            <h2>
+                <span class="en">4. Your Rights</span>
+                <span class="zh">4. 您的权利</span>
+            </h2>
+            <p class="en">You have absolute control over your data. You can delete individual records or your entire account at any time within the app settings.</p>
+            <p class="zh">您对数据拥有绝对控制权。您可以随时在应用设置中删除单条记录或注销整个账号。</p>
+        </section>
+
+        <section>
+            <h2>
+                <span class="en">5. Contact</span>
+                <span class="zh">5. 联系我们</span>
+            </h2>
+            <p>Email: <a href="mailto:leukanote@icloud.com" style="color: var(--primary); text-decoration: none;">leukanote@icloud.com</a></p>
+        </section>
+
         <footer>
-            <p>
-                <span class="zh">© 2026 小白随记</span>
-                <span class="en">© 2026 Leukanote</span>
-            </p>
-            <p style="margin-top: 8px;"><a href="index.html">Home</a> · <a href="terms.html">
-                <span class="zh">用户协议</span>
-                <span class="en">Terms</span>
-            </a></p>
+            <p>&copy; 2026 Leukanote</p>
         </footer>
     </div>
-    
+
     <script>
         function setLang(lang) {
             document.body.setAttribute('data-lang', lang);
-            document.querySelectorAll('.lang-switch button').forEach(btn => {
-                const isZh = (lang === 'zh' && (btn.textContent === '中文' || btn.innerText === '中文'));
-                const isEn = (lang === 'en' && (btn.textContent === 'English' || btn.innerText === 'English'));
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                const text = btn.innerText || btn.textContent;
+                const isZh = (lang === 'zh' && text.includes('中文'));
+                const isEn = (lang === 'en' && text.includes('English'));
                 btn.classList.toggle('active', isZh || isEn);
             });
             localStorage.setItem('leukanote-lang', lang);
         }
-        
-        // Default to 'en' if no preference saved
-        const saved = localStorage.getItem('leukanote-lang') || 'en';
+        let saved = localStorage.getItem('leukanote-lang');
+        if (!saved) saved = 'en';
         setLang(saved);
     </script>
 </body>

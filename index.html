@@ -1,426 +1,303 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leukanote - Support</title>
+    <title>Leukanote - Simple Health Records</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
-            --primary: #0A84FF;
-            --primary-dark: #0066CC;
-            --text: #1C1C1E;
-            --text-secondary: #6E6E73;
-            --bg: #F5F5F7;
-            --card: #FFFFFF;
-            --border: #E5E5EA;
+            --primary: #007AFF;
+            --text: #1D1D1F;
+            --text-secondary: #86868B;
+            --bg: #FFFFFF;
+            --divider: #D2D2D7;
+            --hover-bg: #F5F5F7;
         }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
-            background: var(--bg);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", "Helvetica Neue", sans-serif;
+            background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            background: var(--card);
-            border-radius: 20px;
-            padding: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 4px;
-        }
-        
-        .lang-switch button {
-            padding: 8px 16px;
-            border: none;
-            background: transparent;
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-        
-        .lang-switch button.active {
-            background: var(--primary);
-            color: white;
-        }
-        
+
         .container {
-            max-width: 680px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 80px 20px 40px;
+            padding: 100px 24px 60px;
         }
-        
+
+        /* Language Switcher */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 20px;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 4px 8px;
+        }
+
+        .lang-toggle button.active {
+            color: var(--primary);
+        }
+
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 60px 0 40px;
+            margin-bottom: 80px;
         }
-        
+
         .app-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 32px;
+            border-radius: 22px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        
-        .app-icon img {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            box-shadow: 0 8px 32px rgba(10,132,255,0.3);
-        }
-        
+
         .hero h1 {
-            font-size: 48px;
+            font-size: 40px;
             font-weight: 700;
+            letter-spacing: -0.02em;
             margin-bottom: 12px;
-            letter-spacing: -0.5px;
         }
-        
-        .hero .tagline {
-            font-size: 20px;
+
+        .hero p {
+            font-size: 21px;
             color: var(--text-secondary);
             font-weight: 400;
         }
-        
-        .hero .etymology {
-            font-size: 14px;
-            color: var(--text-secondary);
-            opacity: 0.7;
-            margin-top: 12px;
-            font-style: italic;
-        }
-        
 
-        
-        .card {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 32px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        /* Sections */
+        section {
+            margin-bottom: 64px;
         }
-        
-        .card h2 {
-            font-size: 22px;
+
+        section h2 {
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--divider);
         }
-        
-        .card h2 .icon {
-            width: 36px;
-            height: 36px;
-            background: var(--bg);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+
+        .story-text {
+            font-size: 17px;
+            color: var(--text);
+            line-height: 1.6;
         }
-        
-        .contact-item {
+
+        .story-text p {
+            margin-bottom: 16px;
+        }
+
+        /* Links & Info */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-item {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background: var(--bg);
-            border-radius: 16px;
-            margin-bottom: 12px;
+            padding: 16px 0;
+            border-bottom: 1px solid #F5F5F7;
             text-decoration: none;
             color: inherit;
-            transition: all 0.2s;
+            transition: opacity 0.2s;
         }
-        
-        .contact-item:hover {
-            background: #EBEBF0;
+
+        .info-item:hover {
+            opacity: 0.7;
         }
-        
-        .contact-item .icon {
-            width: 48px;
-            height: 48px;
-            background: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-right: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+        .info-item span:first-child {
+            font-weight: 500;
         }
-        
-        .contact-item .info h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
+
+        .info-item span:last-child {
+            color: var(--primary);
         }
-        
-        .contact-item .info p {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        
-        .contact-item .arrow {
-            margin-left: auto;
-            color: var(--text-secondary);
-            font-size: 20px;
-        }
-        
+
+        /* FAQ */
         .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 24px 0;
+            margin-bottom: 24px;
         }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .faq-item:first-child {
-            padding-top: 0;
-        }
-        
+
         .faq-item h3 {
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text);
+            margin-bottom: 8px;
         }
-        
+
         .faq-item p {
             font-size: 15px;
             color: var(--text-secondary);
-            line-height: 1.7;
         }
-        
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-        
-        .link-card {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: var(--bg);
-            border-radius: 16px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
-        }
-        
-        .link-card:hover {
-            background: #EBEBF0;
-        }
-        
-        .link-card .icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-right: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        
-        .link-card .info h3 {
-            font-size: 15px;
-            font-weight: 600;
-        }
-        
-        .link-card .info p {
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        
+
+        /* Footer */
         footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid var(--divider);
             text-align: center;
-            padding: 40px 0;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 13px;
         }
-        
+
         footer a {
             color: var(--primary);
             text-decoration: none;
+            margin: 0 8px;
         }
-        
+
+        /* Language visibility */
         [data-lang="en"] .zh { display: none; }
         [data-lang="zh"] .en { display: none; }
-        
+
         @media (max-width: 600px) {
-            .hero h1 { font-size: 36px; }
-            .hero .tagline { font-size: 17px; }
-            .card { padding: 24px; }
-            .links-grid { grid-template-columns: 1fr; }
+            .container { padding-top: 80px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 18px; }
         }
     </style>
 </head>
 <body data-lang="en">
-    <div class="lang-switch">
-        <button onclick="setLang('zh')">中文</button>
-        <button class="active" onclick="setLang('en')">English</button>
-    </div>
-    
-    <div class="container">
-        <div class="hero">
-            <div class="app-icon"><img src="icon.png" alt="Leukanote" width="120" height="120" style="border-radius: 28px;"></div>
-            <h1>
-                <span class="zh">小白随记</span>
-                <span class="en">Leukanote</span>
-            </h1>
-            <p class="tagline">
-                <span class="zh">您的个人健康记录助手</span>
-                <span class="en">Your Personal Health Records Assistant</span>
-            </p>
-            <p class="etymology">
-                <span class="zh">小白随记 —— 如白纸般清晰记录您的健康数据</span>
-                <span class="en">From Greek "leukos" (λευκός), meaning white & clear — a blank canvas for your health journey</span>
-            </p>
+    <nav class="nav">
+        <div class="lang-toggle">
+            <button onclick="setLang('en')" class="active">English</button>
+            <button onclick="setLang('zh')">中文</button>
         </div>
-        
-        <div class="card">
-            <h2>
-                <span class="icon">🌱</span>
-                <span class="zh">背后的故事</span>
-                <span class="en">The Story</span>
-            </h2>
-            <div style="font-style: italic; color: var(--text-secondary); line-height: 1.8;">
-                <p class="zh">很多时候，面对一张张复杂的化验单，我们常常感到迷茫和无助。繁琐的数据、难以理解的指标、容易丢失的纸质单据……这正是我开发「小白随记」的初衷。</p>
-                <p class="zh" style="margin-top: 12px;">我希望有一个工具，能像一张白纸（Leukos）一样，清晰、纯净地记录下每一次健康的波动，用直观的趋势图表代替零散的数字。我坚持将所有数据保留在您的设备本地和 iCloud 中，因为我知道，这些数据不仅是记录，更是每一个家庭最私密的托付。</p>
-                
-                <p class="en">Faced with stacks of complex lab reports, I often felt overwhelmed and helpless. Scattered data and paper records that easily get lost—this was the starting point for Leukanote.</p>
-                <p class="en" style="margin-top: 12px;">I wanted a tool that, like a blank canvas ("Leukos"), could clearly and purely record every health fluctuation, replacing fragmented numbers with intuitive trend charts. I insist on keeping all data locally on your device and in your private iCloud, because I know these records are more than just data—they are a family's most private trust.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>
-                <span class="icon">✉️</span>
-                <span class="zh">联系我们</span>
-                <span class="en">Contact Us</span>
-            </h2>
-            <p class="zh" style="color: var(--text-secondary); margin-bottom: 20px;">遇到使用问题或有功能建议？我们随时为您服务。</p>
-            <p class="en" style="color: var(--text-secondary); margin-bottom: 20px;">Have questions or suggestions? We're here to help.</p>
-            
-            <a href="mailto:leukanote@icloud.com" class="contact-item">
-                <div class="icon">📧</div>
-                <div class="info">
-                    <h3>Email</h3>
-                    <p>leukanote@icloud.com</p>
-                </div>
-                <span class="arrow">›</span>
-            </a>
-        </div>
-        
-        <div class="card">
-            <h2>
-                <span class="icon">❓</span>
-                <span class="zh">常见问题</span>
-                <span class="en">FAQ</span>
-            </h2>
-            
-            <div class="faq-item">
-                <h3>
-                    <span class="zh">我的数据安全吗？</span>
-                    <span class="en">Is my data secure?</span>
-                </h3>
-                <p class="zh">您的所有健康数据均存储在设备本地或通过您私人的 Apple iCloud 进行加密同步。我们无法获取、查看或收集您的任何健康记录。</p>
-                <p class="en">All your health data is stored locally on your device or encrypted via your private Apple iCloud. We cannot access, view, or collect any of your health records.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>
-                    <span class="zh">化验单识别准确吗？</span>
-                    <span class="en">How accurate is the lab report scanning?</span>
-                </h3>
-                <p class="zh">文字识别在您的设备本地运行，图片不会上传到任何服务器。受限于图像质量，识别可能存在误差，请仔细核对后再保存。</p>
-                <p class="en">Text recognition runs locally on your device; images are never uploaded to any server. Due to image quality limitations, recognition may have errors. Please verify carefully before saving.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>
-                    <span class="zh">如何删除我的账号？</span>
-                    <span class="en">How do I delete my account?</span>
-                </h3>
-                <p class="zh">您可以在「我的」→「账号设置」→「注销账号」中申请删除账号。账号删除后，所有数据将被清除且无法恢复。</p>
-                <p class="en">Go to "My" → "Account Settings" → "Delete Account". All data will be permanently removed and cannot be recovered.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>
-                <span class="icon">📋</span>
-                <span class="zh">法律文件</span>
-                <span class="en">Legal</span>
-            </h2>
-            <div class="links-grid">
-                <a href="privacy.html" class="link-card">
-                    <div class="icon">🔒</div>
-                    <div class="info">
-                        <h3>
-                            <span class="zh">隐私政策</span>
-                            <span class="en">Privacy Policy</span>
-                        </h3>
-                        <p>
-                            <span class="zh">数据收集与使用</span>
-                            <span class="en">Data Collection & Use</span>
-                        </p>
-                    </div>
-                </a>
-                <a href="terms.html" class="link-card">
-                    <div class="icon">📄</div>
-                    <div class="info">
-                        <h3>
-                            <span class="zh">用户协议</span>
-                            <span class="en">Terms of Use</span>
-                        </h3>
-                        <p>
-                            <span class="zh">使用条款与免责声明</span>
-                            <span class="en">Terms & Disclaimers</span>
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        
-        <footer>
-            <p>
-                <span class="zh">© 2026 小白随记</span>
-                <span class="en">© 2026 Leukanote</span>
-                <span class="zh">保留所有权利</span>
-                <span class="en">All rights reserved</span>.
-            </p>
-            <p style="margin-top: 8px; font-size: 13px; opacity: 0.7;">
-                <span class="zh">免责声明：本应用为单纯记录工具，不提供任何医疗诊断或治疗建议</span>
-                <span class="en">Disclaimer: This app is a recording tool only and does not provide any medical diagnosis or treatment advice</span>
-            </p>
+    </nav>
 
+    <div class="container">
+        <header class="hero">
+            <img src="icon.png" alt="Leukanote Icon" class="app-icon">
+            <h1>
+                <span class="en">Leukanote</span>
+                <span class="zh">小白随记</span>
+            </h1>
+            <p>
+                <span class="en">Your Health, Clearly Recorded.</span>
+                <span class="zh">健康数据，清晰随记。</span>
+            </p>
+        </header>
+
+        <section id="story">
+            <h2>
+                <span class="en">The Mission</span>
+                <span class="zh">开发初衷</span>
+            </h2>
+            <div class="story-text">
+                <p class="en">Faced with stacks of complex lab reports, I often felt overwhelmed. Scattered data and fragile paper records were the starting point for Leukanote. I wanted a tool that, like a blank canvas ("Leukos"), could purely record health fluctuations.</p>
+                <p class="en">I insist on keeping all data locally on your device and in your private iCloud. These records are more than data—they are a family's most private trust.</p>
+                
+                <p class="zh">面对繁琐的化验单，我曾深感无助。零散的数据和易失的纸质记录，是「小白随记」诞生的起点。我希望打造一个像白纸（Leukos）一样纯净的工具，记录每一次健康波动。</p>
+                <p class="zh">我坚持将所有数据保留在您的本地设备和私有 iCloud 中。因为我知道，这些记录不仅是数据，更是每一位家庭成员最私密的托付。</p>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>
+                <span class="en">Questions</span>
+                <span class="zh">常见问题</span>
+            </h2>
+            <div class="faq-item">
+                <h3>
+                    <span class="en">Where is my data?</span>
+                    <span class="zh">数据存储在哪里？</span>
+                </h3>
+                <p>
+                    <span class="en">Exclusively on your device and personal iCloud. We have no central servers and cannot access your health records.</span>
+                    <span class="zh">数据仅存储在您的设备和私有 iCloud 中。我们没有中央服务器，无法访问您的任何健康记录。</span>
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3>
+                    <span class="en">How accurate is the OCR?</span>
+                    <span class="zh">文字识别准确吗？</span>
+                </h3>
+                <p>
+                    <span class="en">Recognition happens on-device using Apple Vision. While advanced, we recommend manual verification before saving.</span>
+                    <span class="zh">识别功能基于 Apple Vision 技术在本地运行。虽然技术先进，但建议在保存前进行人工核对。</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>
+                <span class="en">Contact</span>
+                <span class="zh">联系我们</span>
+            </h2>
+            <div class="info-list">
+                <a href="mailto:leukanote@icloud.com" class="info-item">
+                    <span>Email</span>
+                    <span>leukanote@icloud.com</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="legal">
+            <h2>
+                <span class="en">Legal</span>
+                <span class="zh">法律文件</span>
+            </h2>
+            <div class="info-list">
+                <a href="privacy.html" class="info-item">
+                    <span class="en">Privacy Policy</span>
+                    <span class="zh">隐私政策</span>
+                    <span>&rarr;</span>
+                </a>
+                <a href="terms.html" class="info-item">
+                    <span class="en">Terms of Use</span>
+                    <span class="zh">用户协议</span>
+                    <span>&rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Leukanote. <span class="en">All rights reserved.</span><span class="zh">保留所有权利。</span></p>
+            <p style="margin-top: 12px; font-size: 12px; color: #BBB;">
+                <span class="en">This app is a recording tool and does not provide medical diagnosis or advice.</span>
+                <span class="zh">本应用仅作为记录工具，不提供医疗诊断或建议。</span>
+            </p>
         </footer>
     </div>
-    
+
     <script>
         function setLang(lang) {
             document.body.setAttribute('data-lang', lang);
-            document.querySelectorAll('.lang-switch button').forEach(btn => {
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
                 const text = btn.innerText || btn.textContent;
                 const isZh = (lang === 'zh' && text.includes('中文'));
                 const isEn = (lang === 'en' && text.includes('English'));
@@ -428,12 +305,9 @@
             });
             localStorage.setItem('leukanote-lang', lang);
         }
-        
-        // FOR AUDIT: Default to English unless the user MANUALLY switches
+
         let saved = localStorage.getItem('leukanote-lang');
-        if (!saved) {
-            saved = 'en';
-        }
+        if (!saved) saved = 'en';
         setLang(saved);
     </script>
 </body>
