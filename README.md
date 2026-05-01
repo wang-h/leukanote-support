@@ -14,7 +14,7 @@ A blank canvas for your health records. Leukanote helps you scan, recognize, and
 |------|-----|
 | Support | https://www.leukanote.cn |
 | Privacy Policy | https://www.leukanote.cn/privacy.html |
-| Terms of Use | https://www.leukanote.cn/terms.html |
+| User Agreement | https://www.leukanote.cn/agreement.html |
 
 ## App Store Connect
 
@@ -45,7 +45,7 @@ Then visit http://localhost:8080
 
 - `index.html` - Support homepage (FAQ, contact)
 - `privacy.html` - Privacy Policy (bilingual)
-- `terms.html` - Terms of Use (bilingual)
+- `agreement.html` - User Agreement (bilingual)
 - `CNAME` - Custom domain config
 
 ## Contact
