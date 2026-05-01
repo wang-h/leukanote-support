@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agreement - Leukanote</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --text: #1D1D1F;
+            --text-secondary: #86868B;
+            --bg: #FFFFFF;
+            --section-bg: #F5F5F7;
+            --divider: #D2D2D7;
+            --danger: #FF3B30;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0; height: 64px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000; display: flex; justify-content: center; align-items: center;
+            border-bottom: 0.5px solid var(--divider);
+        }
+
+        .lang-toggle { display: flex; gap: 24px; }
+        .lang-toggle button {
+            background: none; border: none; color: var(--text-secondary);
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .lang-toggle button.active { color: var(--primary); }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+
+        .back-link {
+            display: inline-block; margin-bottom: 40px; color: var(--text-secondary);
+            text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--primary); }
+
+        header { margin-bottom: 64px; }
+        header h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .last-updated { color: var(--text-secondary); font-size: 14px; }
+
+        section { margin-bottom: 64px; }
+        .section-header { margin-bottom: 24px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+        .section-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+
+        .content-box { background: var(--section-bg); padding: 32px; border-radius: 20px; font-size: 16px; color: #333; }
+        .content-box p { margin-bottom: 16px; }
+        .content-box p:last-child { margin-bottom: 0; }
+
+        .danger-card { border-left: 4px solid var(--danger); background: #FFF2F2; padding: 24px; border-radius: 0 16px 16px 0; font-weight: 600; margin-bottom: 40px; color: var(--danger); }
+
+        footer { text-align: center; color: var(--text-secondary); font-size: 14px; border-top: 0.5px solid var(--divider); padding-top: 40px; margin-top: 80px; }
+
+        [data-lang="en"] .zh { display: none; }
+        [data-lang="zh"] .en { display: none; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            .content-box { padding: 24px; }
+        }
+    </style>
+</head>
+<body data-lang="en">
+    <nav class="nav">
+        <div class="lang-toggle">
+            <button onclick="setLang('en')" class="active">English</button>
+            <button onclick="setLang('zh')">中文</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; <span class="en">Back to Home</span><span class="zh">返回首页</span></a>
+
+        <header>
+            <h1>
+                <span class="en">User Agreement</span>
+                <span class="zh">用户协议</span>
+            </h1>
+            <p class="last-updated">
+                <span class="en">Effective Date: April 12, 2026</span>
+                <span class="zh">生效日期：2026年4月12日</span>
+            </p>
+        </header>
+
+        <div class="danger-card">
+            <span class="en">Leukanote is a recording tool only. It does NOT provide medical diagnosis or professional medical advice.</span>
+            <span class="zh">小白随记仅作为记录工具。它不提供医疗诊断或专业医疗建议。</span>
+        </div>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">01 / Mission</span>
+                <h2>
+                    <span class="en">Leukanote's Mission</span>
+                    <span class="zh">小白的定位</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">Leukanote is provided by an individual developer, designed as your personal "digital health notebook" to help organize cluttered medical data. We aim to be a warm companion on your road to recovery.</p>
+                <p class="zh">「小白随记」由个人开发者提供，初衷是作为您的个人「电子健康笔记」，帮助您理清纷乱的检查数据。我们希望成为您恢复路上的温情陪伴者。</p>
+                <p class="en" style="margin-top: 12px;"><strong>Nature of Service:</strong> Leukanote provides information display and recording functions only. It does not provide medical diagnosis, monitoring, or treatment. All content (including recognized data, trends, and health knowledge) does not constitute a medical diagnosis or any form of medical advice.</p>
+                <p class="zh" style="margin-top: 12px;"><strong>【重要性质声明】</strong>小白随记仅提供信息展示与记录功能，不具备也不提供医疗诊断、监护或治疗功能。开发者在此声明本应用所呈现的所有内容（包括但不限于识别数据、趋势图表、百科知识）均不构成医疗诊断依据，亦不属于任何形式的医疗建议。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">02 / Medical Decisions</span>
+                <h2>
+                    <span class="en">Medical Decisions</span>
+                    <span class="zh">医疗决策的叮嘱</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">Leukanote's data recognition and analysis cannot replace a doctor's professional judgment. Every number on a health report needs to be interpreted by your primary physician in combination with clinical symptoms and other tests.</p>
+                <p class="zh">小白的数据识别与分析能力终究不能替代医生的专业判断。健康报告上的每一个数字，都需要主治医生结合您的临床症状、体征及其他检查结果进行综合解读。</p>
+                <div class="danger-card" style="margin-top: 24px; margin-bottom: 0;">
+                    <span class="en"><strong>Safety Red Line:</strong> Always consult a qualified physician before adjusting medication dosages, changing treatment plans, or making any health-related decisions. Any health risks or consequences arising from changes made based on this app are the sole responsibility of the user.</span>
+                    <span class="zh"><strong>【安全红线】</strong>在您需要调整药物剂量、改变治疗方案或做出任何影响健康的决策前，请务必咨询具有执业资格的专业医生。若您因参考本 App 信息而自行改变医疗行为，由此产生的任何健康风险或后果，由用户自行承担。</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">03 / Accuracy</span>
+                <h2>
+                    <span class="en">Data Accuracy & Verification</span>
+                    <span class="zh">数据准确性与核对义务</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">Due to image quality, paper reflections, or OCR limitations, Leukanote may produce errors during OCR (e.g., misplaced decimals, misidentified metrics).</p>
+                <p class="zh">受限于图像质量、纸张反光或设备端 OCR 能力限制，小白在识别健康报告时可能产生误差（如小数点错位、指标名误认）。</p>
+                <p class="en" style="margin-top: 12px;"><strong>Verification Duty:</strong> You agree that you are responsible for manually verifying and correcting the recognition results before clicking "Save". Leukanote is not liable for data errors resulting from a user's failure to verify results.</p>
+                <p class="zh" style="margin-top: 12px;"><strong>【核对义务】</strong>您理解并同意，在点击「保存」按钮前，您有责任对识别结果进行人工核对与纠正。小白对因用户未履行核对义务而导致的数据记录错误不承担法律责任。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">04 / Privacy & Changes</span>
+                <h2>
+                    <span class="en">Privacy & Protocol Changes</span>
+                    <span class="zh">隐私、安全与协议变更</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <ul>
+                    <li><span class="en"><strong>Data Ownership:</strong> Your data is stored entirely on your iPhone and personal iCloud. Developers cannot access it. Please protect your device password to prevent privacy leaks.</span><span class="zh"><strong>数据归属：</strong>您的数据完全存储于您的 iPhone 硬件及个人 iCloud 中，开发者无法访问。请务必保护好您的设备密码，防止隐私泄露。</span></li>
+                    <li><span class="en"><strong>Third-party AI Services:</strong> Leukanote does not send report images, OCR text, health indicators, or personal health data to any third-party AI model, third-party AI service, or developer-operated AI server. OCR is performed using Apple on-device recognition capabilities.</span><span class="zh"><strong>第三方 AI 服务：</strong>小白随记不会将化验单图片、OCR 识别文本、健康指标或个人健康数据发送给任何第三方 AI 模型、第三方 AI 服务或开发者自建 AI 服务器。识别功能使用 Apple 设备端识别能力完成。</span></li>
+                    <li><span class="en"><strong>Protocol Updates:</strong> We may update these terms as features improve. Continued use of the app implies acceptance of the updated terms. If you disagree, please stop using and uninstall the app.</span><span class="zh"><strong>协议更新：</strong>随着功能完善，我们可能会更新本协议。若您继续使用，即代表您理解并接受更新后的条款。若对条款有异议，请停止使用并卸载本应用。</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">05 / Liability</span>
+                <h2>
+                    <span class="en">Limitation of Liability</span>
+                    <span class="zh">责任限制</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">To the maximum extent permitted by law, Leukanote shall not be liable for any indirect, incidental, or consequential damages arising out of your use or inability to use the service.</p>
+                <p class="zh">在法律允许的最大范围内，对于因您使用或无法使用服务而产生的任何间接、偶然或后果性损害，小白随记不承担责任。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="section-tag">06 / Law</span>
+                <h2>
+                    <span class="en">Governing Law</span>
+                    <span class="zh">适用法律</span>
+                </h2>
+            </div>
+            <div class="content-box">
+                <p class="en">These terms shall be governed by and construed in accordance with the laws of the jurisdiction where the developer resides, without regard to its conflict of law provisions.</p>
+                <p class="zh">本协议受开发者所在地法律管辖并按其解释，不考虑其法律冲突条款。</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Leukanote.</p>
+        </footer>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                const text = btn.innerText || btn.textContent;
+                const isZh = (lang === 'zh' && text.includes('中文'));
+                const isEn = (lang === 'en' && text.includes('English'));
+                btn.classList.toggle('active', isZh || isEn);
+            });
+            localStorage.setItem('leukanote-lang', lang);
+        }
+        let saved = localStorage.getItem('leukanote-lang') || 'en';
+        setLang(saved);
+    </script>
+</body>
+</html>
